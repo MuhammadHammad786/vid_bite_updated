@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- TYPOGRAPHY -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- UNIVERSAL STYLESHEET -->
+	<link rel="stylesheet" href="./assets/css/style.css">
+	
+	<!-- SIGIN CSS -->
+    <link rel="stylesheet" href="./assets/css/signin.css">
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- FONT ICONS KIT -->
+    <script src="https://kit.fontawesome.com/74d240b4ae.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<main>
+
+		<div class="forms">
+			<ul class="tab-group">
+				<li class="tab active"><a href="#login">Log In</a></li>
+				<li class="tab"><a href="#signup">Sign Up</a></li>
+			</ul>
+			<form action="#" id="login">
+				<div class="input-field">
+					<label for="username" class="user">Username</label>
+					<input type="text" name="username" placeholder="Username" required/>
+					<label for="password">Password</label>
+					<input type="password" name="password" placeholder="Password" required />
+					<input type="submit" value="Login" class="button" />
+					<p class="text-p"> <a href="#">Forgot password?</a> </p>
+				</div>
+			</form>
+			<form action="#" id="signup">
+				<div class="input-field">
+					<label for="username"  class="user">Username</label>
+					<input type="text" name="username" placeholder="Username" required/>
+					<label for="password">Password</label>
+					<input type="password" name="password" placeholder="Password"required />
+					<label for="confrim_password">Confirm Password</label>
+					<input type="password" name="confrim_password" placeholder="Confirm Password"required />
+					<label for="DOB">Date Of Birth</label>
+					<input type="date">
+					<label for="email">Email</label>
+					<input type="email" name="email"placeholder="Email" required />
+					<input type="submit" value="Sign up" class="button" />
+				</div>
+			</form>
+		</div>
+
+	</main>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.tab a').on('click', function (e) {
+				e.preventDefault();
+
+				$(this).parent().addClass('active');
+				$(this).parent().siblings().removeClass('active');
+
+				var href = $(this).attr('href');
+				$('.forms > form').hide();
+				$(href).fadeIn(500);
+			});
+		});
+	</script>
+</body>
+
+</html>
